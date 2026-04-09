@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ===== VANTAGE PUBLISHERS DESIGN SYSTEM ===== */
+/* "The Modern Archivist" — Navy & Gold editorial palette */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* --- Primary: Gold / Amber --- */
+  --color-primary: #835500;
+  --color-primary-container: #F5A623;
+  --color-primary-fixed: #ffddb4;
+  --color-primary-fixed-dim: #ffb955;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #644000;
+  --color-on-primary-fixed: #291800;
+  --color-on-primary-fixed-variant: #633f00;
+
+  /* --- Secondary: Muted Navy --- */
+  --color-secondary: #4f5e7f;
+  --color-secondary-container: #c7d7fd;
+  --color-secondary-fixed: #d7e2ff;
+  --color-secondary-fixed-dim: #b6c7ec;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #4d5d7e;
+  --color-on-secondary-fixed: #091b38;
+  --color-on-secondary-fixed-variant: #374766;
+
+  /* --- Tertiary: Green --- */
+  --color-tertiary: #006d42;
+  --color-tertiary-container: #70c895;
+  --color-tertiary-fixed: #9cf5bf;
+  --color-tertiary-fixed-dim: #80d9a4;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #005331;
+  --color-on-tertiary-fixed: #002111;
+  --color-on-tertiary-fixed-variant: #005231;
+
+  /* --- Surface System --- */
+  --color-surface: #faf9f5;
+  --color-surface-dim: #dadad6;
+  --color-surface-bright: #faf9f5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f4f4f0;
+  --color-surface-container: #eeeeea;
+  --color-surface-container-high: #e8e8e4;
+  --color-surface-container-highest: #e2e3df;
+  --color-surface-variant: #e2e3df;
+  --color-surface-tint: #835500;
+  --color-background: #faf9f5;
+
+  /* --- On Surface --- */
+  --color-on-surface: #1a1c1a;
+  --color-on-surface-variant: #524534;
+  --color-on-background: #1a1c1a;
+
+  /* --- Outline --- */
+  --color-outline: #857462;
+  --color-outline-variant: #d7c3ae;
+
+  /* --- Error --- */
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  /* --- Inverse --- */
+  --color-inverse-surface: #2f312e;
+  --color-inverse-on-surface: #f1f1ed;
+  --color-inverse-primary: #ffb955;
+
+  /* --- Brand Accents --- */
+  --color-deep-navy: #0B1D3A;
+  --color-brand-amber: #F5A623;
+
+  /* --- Typography --- */
+  --font-headline: "Playfair Display", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+  --font-bebas: "Bebas Neue", cursive;
+
+  /* --- Border Radius --- */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===== Global Styles ===== */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Material Symbols Configuration ===== */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+/* ===== Custom Utilities ===== */
+.glass-nav {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.editorial-shadow {
+  box-shadow: 0 12px 40px -4px rgba(11, 29, 58, 0.06);
+}
+
+.gradient-cta {
+  background: linear-gradient(135deg, #835500, #F5A623);
+}
+
+/* Ghost border for accessibility */
+.ghost-border {
+  border-color: rgba(215, 195, 174, 0.15);
+}
+
+/* Text truncation */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
 }
